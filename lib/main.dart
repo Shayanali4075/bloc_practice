@@ -1,4 +1,7 @@
+import 'package:bloc_practice/bloc/api/apibloc.dart';
 import 'package:bloc_practice/bloc/imagepicker/imagepickerbloc.dart';
+import 'package:bloc_practice/bloc/slider/sliderbloc.dart';
+import 'package:bloc_practice/netwrok/apiresponse.dart';
 import 'package:bloc_practice/utils/imagePickerutils.dart';
 import 'package:flutter/material.dart';
 import 'package:bloc_practice/view/homepage.dart';
@@ -16,7 +19,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => ImagePickerBloc(PickImageUtils()),)
+          BlocProvider(create: (context) => ImagePickerBloc(PickImageUtils()),),
+          BlocProvider(create: (context) => SliderBloc()),
+          BlocProvider(create: (context) => ApiBloc(ApiResponse())),
         ],
         child: MaterialApp(
           title: 'Flutter Demo',

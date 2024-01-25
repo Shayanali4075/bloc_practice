@@ -7,5 +7,5 @@ class PickImageUtils{
     XFile? file = await picker.pickImage(source: ImageSource.gallery);
     return file;
   }
-  
+
 }
